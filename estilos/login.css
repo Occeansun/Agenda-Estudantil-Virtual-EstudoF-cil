@@ -1,0 +1,125 @@
+:root{
+
+    --purple: rgb(24,14,49) ;
+    --dark-purple: rgb(4,0,16) ;
+
+}
+
+*{
+
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+body{
+
+    background-color: var(--purple);
+    height: 100vh;
+
+}
+
+.areaLogin{
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    position: absolute;
+
+    height: 500px;
+    width: 400px;
+    padding: 20px;
+
+    background-color: white;
+
+    position: relative;
+
+}
+
+.title{
+
+    text-align: center;
+
+    margin: 50px 0px 80px;
+
+}
+
+.divParaAlinhar{
+
+    width: 280px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.wordLogin{
+
+    margin-bottom: 20px;
+
+}
+.usernameField{
+
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+
+    text-align: center;
+
+    font-size: 1.2em;
+
+}
+.button{
+
+    display: block;
+    width: 100%;
+    height: 40px;
+
+    font-size: 1.2em;
+    font-weight: bolder;
+
+}
+
+.invalidUser{
+    color: red;
+    padding: 10px 5px 20px 5px;
+    font-weight: bolder;
+
+    border: 1px solid red;
+
+    margin-bottom: 10px;
+
+}
+
+.hide{
+
+    height: 0px;
+
+}
+
+.invalidUser small{
+
+    font-weight: lighter;
+
+}
+
+
+footer{
+
+    position: absolute;
+
+    width: 90%;
+
+    font-size: 0.7em;
+
+    color: rgba(0, 0, 0, 0.3);
+
+    bottom: 2%;
+
+}
