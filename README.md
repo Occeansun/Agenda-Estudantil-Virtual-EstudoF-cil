@@ -81,11 +81,14 @@ git push origin feature/sua-nova-funcionalidade
 
 Abra um Pull Request e forneça uma descrição clara da melhoria ou correção.
 
-# 👩‍💻 Autora
-💁 Nome	🌐 GitHub	📧 Email
-Marisol Sales Marinho Roque	@Occeansun
-	marisolsales01@gmail.com
-⭐ Apoie o Projeto
+## 👩‍💻 Autora
 
-Se este projeto te ajudou ou serviu de inspiração, deixe uma estrela ⭐ no repositório. Isso ajuda na visibilidade e crescimento da comunidade.
+| 💁 Nome                      | 🌐 GitHub                     | 📧 Email                     |
+|------------------------------|-------------------------------|------------------------------|
+| Marisol Sales Marinho Roque | [@Occeansun](https://github.com/Occeansun) | marisolsales01@gmail.com |
+
+## ⭐ Apoie o Projeto
+
+Se este projeto te ajudou ou serviu de inspiração, deixe uma estrela ⭐ no repositório.  
+Isso ajuda na visibilidade e crescimento da comunidade.
 
