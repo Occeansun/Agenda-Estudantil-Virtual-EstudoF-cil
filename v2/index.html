@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>FocusNotes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <i class="fa-solid fa-note-sticky"></i>
+                <span class="sidebar-title">FocusNotes</span>
+            </div>
+
+            <nav class="sidebar-menu">
+                <span class="sidebar-category">Categorias</span>
+                <button class="menu-item active">Todos</button>
+                <button class="menu-item">HTML</button>
+                <button class="menu-item">CSS</button>
+                <button class="menu-item">JavaScript</button>
+                <button class="menu-item">JAVA</button>
+                <button class="menu-item">Python</button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="new-note-btn">
+                    <i class="fa-solid fa-plus"></i>
+                    Criar Nota
+                </button>
+            </div>
+        </aside>
+
+        <div class="main">
+            <header class="header">
+                <div class="header-left">
+                    <div class="logo">FocusNotes</div>
+                </div>
+
+                <div class="header-center">
+                    <input type="text" class="search-input" placeholder="Buscar notas...">
+                </div>
+
+                <div class="header-rigth">
+                    <button class="header-button">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="user-name">Usuário</span>
+                    </button>
+                </div>
+            </header>
+
+            <main class="content">
+                <div class="content-header">
+                    <h1 class="content-title">Minhas Notas</h1>
+                    <p class="content-subtitle">5 notas encontradas</p>
+                </div>
+
+                <section class="notes-list">
+                    <article class="note-card">
+                        <span class="note-tag note-tag--python">Python</span>
+                        <h2 class="note-title">Python para Data Science</h2>
+                        <p class="note-description">
+                            Bibliotecas essenciais para análise de dados com Python.
+                        </p>
+                    </article>
+
+                    <article class="note-card">
+                        <span class="note-tag note-tag--java">Java</span>
+                        <h2 class="note-title">POO em Java</h2>
+                        <p class="note-description">
+                            Conceitos de Programação Orientada a Objetos em Java.
+                        </p>
+                    </article>
+
+                    <article class="note-card">
+                        <span class="note-tag note-tag--js">JavaScript</span>
+                        <h2 class="note-title">JavaScript Async/Await</h2>
+                        <p class="note-description">
+                            Programação assíncrona moderna com async/await e Promises.
+                        </p>
+                    </article>
+
+                    <article class="note-card">
+                        <span class="note-tag note-tag--css">CSS</span>
+                        <h2 class="note-title">CSS Flexbox Completo</h2>
+                        <p class="note-description">
+                            Guia completo sobre Flexbox para criar layouts flexíveis.
+                        </p>
+                    </article>
+
+                    <article class="note-card">
+                        <span class="note-tag note-tag--html">HTML</span>
+                        <h2 class="note-title">Fundamentos de HTML5</h2>
+                        <p class="note-description">
+                            Estrutura básica de documentos HTML e boas práticas.
+                        </p>
+                    </article>
+                </section>
+            </main>
+
+        </div>
+    </div>
+</body>
+
+</html>
