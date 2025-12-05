@@ -1,0 +1,134 @@
+.primary-button {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #1d4ed8;
+}
+
+.primary-button:hover {
+  background: transparent;
+  border-color: #1d4ed8;
+}
+
+.secondary-button {
+  background: #020617;
+  color: #e5e7eb;
+  border-color: #1f2937;
+}
+
+.secondary-button:hover {
+  background: transparent;
+}
+
+.note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #e5e7eb;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #111827;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 14px;
+  outline: none;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: #6b7280;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px #2563eb33;
+}
+
+.textarea {
+  min-height: 220px;
+  resize: vertical;
+}
+
+.char-counter {
+  font-size: 11px;
+  color: #6b7280;
+  align-self: flex-end;
+}
+
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.category-pill {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid #1f2937;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.category-pill.is-active {
+  background: #1d4ed8;
+  border-color: #2563eb;
+  color: #f9fafb;
+}
+
+.form-footer {
+  margin-top: 8px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .note-page {
+    padding: 16px;
+  }
+
+  .note-page-header,
+  .note-header,
+  .note-body {
+    max-width: 100%;
+  }
+
+  .note-title-main {
+    font-size: 22px;
+  }
+
+  .primary-button,
+  .secondary-button {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .form-footer {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .form-footer .primary-button,
+  .form-footer .secondary-button {
+    justify-content: center;
+    width: 100%;
+  }
+}
