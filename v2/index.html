@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./src/styles/index.css" />
 </head>
+
 <body>
     <div class="app">
         <div class="sidebar-overlay"></div>
@@ -30,7 +32,7 @@
 
 
             <div class="sidebar-footer">
-                <a href="./src/templates/nota.html" class="new-note-btn">
+                <a href="./src/templates/create-note.html" class="new-note-btn">
                     <i class="fa-solid fa-plus" aria-hidden="true"></i>
                     Criar Nota
                 </a>
@@ -67,11 +69,13 @@
 
                 <section class="notes-list">
                     <article class="note-card" data-lang="python">
-                        <span class="note-tag note-tag--python">Python</span>
-                        <h2 class="note-title">Python para Data Science</h2>
-                        <p class="note-description">
-                            Bibliotecas essenciais para análise de dados com Python.
-                        </p>
+                        <a href="./src/templates/nota.html">
+                            <span class="note-tag note-tag--python">Python</span>
+                            <h2 class="note-title">Python para Data Science</h2>
+                            <p class="note-description">
+                                Bibliotecas essenciais para análise de dados com Python.
+                            </p>
+                        </a>
                     </article>
 
                     <article class="note-card" data-lang="java">
