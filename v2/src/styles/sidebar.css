@@ -55,6 +55,9 @@
 }
 
 .new-note-btn {
+  display: inline-flex;      
+  align-items: center;
+  justify-content: center;   
   width: 100%;
   padding: 10px 12px;
   border-radius: 8px;
@@ -63,14 +66,13 @@
   color: #ffffff;
   font-weight: 500;
   cursor: pointer;
+  gap: 8px;
 }
 
 .new-note-btn:hover {
   background: transparent;
   outline: #2563eb solid 2px;
 }
-
-
 
 .sidebar-overlay {
   position: fixed;
