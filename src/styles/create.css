@@ -29,6 +29,7 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  margin: 4px 0px 4px 0px;
 }
 
 .form-group label {
@@ -79,18 +80,28 @@
 
 .category-pill {
   padding: 6px 14px;
-  border-radius: 999px;
+  border-radius: 8px;
   border: 1px solid #1f2937;
   background: #020617;
   color: #e5e7eb;
   font-size: 13px;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.category-pill:hover {
+  background: #1e293b;
+  border-color: #334155;
 }
 
 .category-pill.is-active {
   background: #1d4ed8;
   border-color: #2563eb;
   color: #f9fafb;
+}
+
+.category-pill.is-active:hover {
+  background: #2563eb;
 }
 
 .form-footer {

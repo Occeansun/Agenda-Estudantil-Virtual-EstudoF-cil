@@ -1,14 +1,34 @@
 const form = document.querySelector('.note-form');
 
-form.addEventListener('submit', function (event) {
+const categoryButtons = document.querySelectorAll('.category-pill');
+
+categoryButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    categoryButtons.forEach(b => b.classList.remove('is-active'));
+    button.classList.add('is-active');
+  });
+});
+
+form.addEventListener('submit', function(event) {
   event.preventDefault();
 
   const title = document.querySelector('#title').value.trim();
   const summary = document.querySelector('#summary').value.trim();
   const content = document.querySelector('#content').value.trim();
+
   const activeCategory = document
     .querySelector('.category-pill.is-active')
     ?.textContent.trim().toLowerCase();
+
+  if (!title || !content) {
+    alert('Por favor, preencha o título e o conteúdo.');
+    return;
+  }
+
+  if (!activeCategory) {
+    alert('Por favor, selecione uma categoria.');
+    return;
+  }
 
   const newNote = {
     id: crypto.randomUUID(),
