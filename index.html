@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,12 +7,12 @@
     <meta name="description"
         content="Organize e revise suas notas de programação com o FocusNotes. Filtre por linguagem, busque rapidamente e acesse seus estudos de HTML, CSS, JavaScript, Java e Python." />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./src/styles/index.css" />
+    <link rel="stylesheet" href="./src/styles/index.css">
 </head>
-
 <body>
     <div class="app">
         <div class="sidebar-overlay"></div>
+
         <aside class="sidebar" aria-label="Navegação lateral">
             <div class="sidebar-logo">
                 <i class="fa-solid fa-note-sticky" aria-hidden="true"></i>
@@ -30,9 +29,8 @@
                 <button type="button" class="menu-item" data-filter="python">Python</button>
             </nav>
 
-
             <div class="sidebar-footer">
-                <a href="./src/templates/create-note.html" class="new-note-btn">
+                <a href="./src/pages/create-notepad.html" class="new-note-btn">
                     <i class="fa-solid fa-plus" aria-hidden="true"></i>
                     Criar Nota
                 </a>
@@ -64,57 +62,18 @@
             <main class="content">
                 <div class="content-header">
                     <h1 class="content-title">Minhas Notas</h1>
-                    <p class="content-subtitle">5 notas encontradas</p>
+                    <p class="content-subtitle">0 notas encontradas</p>
                 </div>
 
-                <section class="notes-list">
-                    <article class="note-card" data-lang="python">
-                        <a href="./src/templates/nota.html">
-                            <span class="note-tag note-tag--python">Python</span>
-                            <h2 class="note-title">Python para Data Science</h2>
-                            <p class="note-description">
-                                Bibliotecas essenciais para análise de dados com Python.
-                            </p>
-                        </a>
-                    </article>
-
-                    <article class="note-card" data-lang="java">
-                        <span class="note-tag note-tag--java">Java</span>
-                        <h2 class="note-title">POO em Java</h2>
-                        <p class="note-description">
-                            Conceitos de Programação Orientada a Objetos em Java.
-                        </p>
-                    </article>
-
-                    <article class="note-card" data-lang="javascript">
-                        <span class="note-tag note-tag--js">JavaScript</span>
-                        <h2 class="note-title">JavaScript Async/Await</h2>
-                        <p class="note-description">
-                            Programação assíncrona moderna com async/await e Promises.
-                        </p>
-                    </article>
-
-                    <article class="note-card" data-lang="css">
-                        <span class="note-tag note-tag--css">CSS</span>
-                        <h2 class="note-title">CSS Flexbox Completo</h2>
-                        <p class="note-description">
-                            Guia completo sobre Flexbox para criar layouts flexíveis.
-                        </p>
-                    </article>
-
-                    <article class="note-card" data-lang="html">
-                        <span class="note-tag note-tag--html">HTML</span>
-                        <h2 class="note-title">Fundamentos de HTML5</h2>
-                        <p class="note-description">
-                            Estrutura básica de documentos HTML e boas práticas.
-                        </p>
-                    </article>
-                </section>
+                <!-- Card Dinamicos -->
+                <section class="notes-list"></section>
             </main>
         </div>
     </div>
-    <script src="./src/scripts/toggle.js"></script>
-    <script src="./src/scripts/filter.js"></script>
-</body>
 
+    <script type="module" src="./src/scripts/notes.js"></script>
+    <script type="module" src="./src/scripts/toggle.js"></script>
+    <script type="module" src="./src/scripts/filter.js"></script>
+    
+</body>
 </html>
