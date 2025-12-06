@@ -1,47 +1,56 @@
-const form = document.querySelector('.note-form');
+import { storage } from './storage.js';
 
-const categoryButtons = document.querySelectorAll('.category-pill');
+document.addEventListener('DOMContentLoaded', initCreateNotePage);
 
-categoryButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    categoryButtons.forEach(b => b.classList.remove('is-active'));
-    button.classList.add('is-active');
+function initCreateNotePage() {
+  const form = document.querySelector('.note-form');
+  if (!form) return;
+  setupCategorySelection();
+  form.addEventListener('submit', handleFormSubmit);
+}
+
+function setupCategorySelection() {
+  const categoryButtons = document.querySelectorAll('.category-pill');
+  categoryButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      categoryButtons.forEach(b => b.classList.remove('is-active'));
+      button.classList.add('is-active');
+    });
   });
-});
+}
 
-form.addEventListener('submit', function(event) {
+function handleFormSubmit(event) {
   event.preventDefault();
 
-  const title = document.querySelector('#title').value.trim();
-  const summary = document.querySelector('#summary').value.trim();
-  const content = document.querySelector('#content').value.trim();
-
+  const form = event.currentTarget;
+  const title = form.querySelector('#title').value.trim();
+  const summary = form.querySelector('#summary').value.trim();
+  const content = form.querySelector('#content').value.trim();
   const activeCategory = document
     .querySelector('.category-pill.is-active')
     ?.textContent.trim().toLowerCase();
 
-  if (!title || !content) {
-    alert('Por favor, preencha o título e o conteúdo.');
-    return;
-  }
+  if (!isFormValid({ title, content, activeCategory })) return;
 
-  if (!activeCategory) {
-    alert('Por favor, selecione uma categoria.');
-    return;
-  }
-
-  const newNote = {
-    id: crypto.randomUUID(),
+  const newNote = storage.buildNote({
     title,
     summary,
     content,
     category: activeCategory,
-    createdAt: new Date().toISOString(),
-  };
+  });
 
-  const stored = JSON.parse(localStorage.getItem('notes') || '[]');
-  stored.push(newNote);
-  localStorage.setItem('notes', JSON.stringify(stored));
-
+  storage.saveNote(newNote);
   window.location.href = '../../index.html';
-});
+}
+
+function isFormValid({ title, content, activeCategory }) {
+  if (!title || !content) {
+    alert('Por favor, preencha o título e o conteúdo');
+    return false;
+  }
+  if (!activeCategory) {
+    alert('Por favor, selecione uma categoria.');
+    return false;
+  }
+  return true;
+}
