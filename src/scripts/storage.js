@@ -35,7 +35,7 @@ class Storage {
    * Salva uma nota
    * @param {Object} note - Nota a ser salva
    */
-  save(note) {
+  saveNote(note) {
     try {
       const notes = this.getAll();
       notes.push(note);
