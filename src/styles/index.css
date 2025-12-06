@@ -1,4 +1,10 @@
 @import url("./vendor/reset.css");
-@import url("./layout/layout.css");
 @import url("./global.css");
-@import url("./style.css")
+@import url("./layouts/index.css");
+@import url("./layouts/notes.css");
+@import url("./components/buttons.css");
+@import url("./header.css");
+@import url("./sidebar.css");
+@import url("./content.css");
+@import url("./create.css");
+@import url("./note.css");
