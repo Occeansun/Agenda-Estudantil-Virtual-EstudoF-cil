@@ -5,8 +5,36 @@ document.addEventListener('DOMContentLoaded', initCreateNotePage);
 function initCreateNotePage() {
   const form = document.querySelector('.note-form');
   if (!form) return;
+  const noteId = getNoteIdFromUrl();
   setupCategorySelection();
-  form.addEventListener('submit', handleFormSubmit);
+  if (noteId) {
+    loadNoteForEdit(noteId);
+  }
+  form.addEventListener('submit',event => handleFormSubmit(event, noteId));
+}
+
+function getNoteIdFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('id');
+}
+
+function loadNoteForEdit(id) {
+  const note = storage.findById(id);
+  if (!note) {
+    alert('Nota não encontrada');
+    window.location.href = '../../index.html';
+    return;
+  }
+
+  document.querySelector('#title').value = note.title;
+  document.querySelector('#summary').value = note.summary || '';
+  document.querySelector('#content').value = note.content;
+
+  const buttons = document.querySelectorAll('.category-pill');
+  buttons.forEach(btn => {
+    const text = btn.textContent.trim().toLowerCase();
+    btn.classList.toggle('is-active', text === note.category);
+  });
 }
 
 function setupCategorySelection() {
@@ -19,7 +47,7 @@ function setupCategorySelection() {
   });
 }
 
-function handleFormSubmit(event) {
+function handleFormSubmit(event, noteId) {
   event.preventDefault();
 
   const form = event.currentTarget;
@@ -32,14 +60,24 @@ function handleFormSubmit(event) {
 
   if (!isFormValid({ title, content, activeCategory })) return;
 
-  const newNote = storage.buildNote({
-    title,
-    summary,
-    content,
-    category: activeCategory,
-  });
+  if (noteId) {
+    storage.updateNote(noteId, {
+      title,
+      summary,
+      content,
+      category: activeCategory,
+      updatedAt: new Date().toISOString(),
+    });
+  } else {
+    const newNote = storage.buildNote({
+      title,
+      summary,
+      content,
+      category: activeCategory,
+    });
+    storage.saveNote(newNote);
+  }
 
-  storage.saveNote(newNote);
   window.location.href = '../../index.html';
 }
 

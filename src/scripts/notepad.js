@@ -1,16 +1,17 @@
-import { storage } from './storage.js';
+import { storage } from "./storage.js";
 
 document.addEventListener('DOMContentLoaded', initNotePage);
 
 function initNotePage() {
   const noteId = getNoteIdFromURL();
   if (!noteId) return redirectHome('Nota não encontrada');
-
+  
   const note = storage.findById(noteId);
   if (!note) return redirectHome('Nota não encontrada');
-
+  
   renderNote(note);
   setupDelete(noteId);
+  setupEdit(noteId);
 }
 
 function getNoteIdFromURL() {
@@ -52,8 +53,17 @@ function setupDelete(noteId) {
   deleteButton.addEventListener('click', () => {
     const confirmDelete = window.confirm('Tem certeza que deseja excluir esta nota?');
     if (confirmDelete) {
-      storage.deleteNote(noteId);
+      storage.deleteNote(noteId);         
       window.location.href = '../../index.html';
     }
+  });
+}
+
+function setupEdit(noteId) {
+  const editButton = document.querySelector('.primary-button');
+  if (!editButton) return;
+  
+  editButton.addEventListener('click', () => {
+    window.location.href = `./create-notepad.html?id=${noteId}`;
   });
 }

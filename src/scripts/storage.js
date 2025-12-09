@@ -74,7 +74,7 @@ class Storage {
    * @param {Object} updates - Campos a atualizar
    * @returns {boolean} True se atualizado com sucesso
    */
-  update(id, updates) {
+  updateNote(id, updates) {
     const notes = this.getAll();
     const index = notes.findIndex(note => note.id === id);
     if (index === -1) return false;
