@@ -1,10 +1,10 @@
-# Agenda Estudantil Virtual — EstudoFácil
+# Agenda Estudantil Virtual — FocusNotes.
 
 Uma ferramenta simples para gestão de estudos e tarefas.
 
 🎯 Visão Geral do Projeto
 
-O Agenda Estudantil Virtual – EstudoFácil é uma aplicação voltada para estudantes que desejam organizar de forma eficiente suas aulas, tarefas, provas e cronogramas.
+O FocusNotes é uma aplicação voltada para estudantes que desejam organizar de forma eficiente suas aulas, tarefas, provas e cronogramas.
 Principais recursos:
 
 Cadastro de disciplinas, aulas e conteúdos.
