@@ -1,0 +1,21 @@
+# Arquivos do sistema
+Thumbs.db
+Desktop.ini
+*.log
+*.tmp
+
+# Pastas do Windows/OneDrive que dão erro
+AppData/
+OneDrive/
+
+# IDEs
+.vscode/
+.idea/
+*.suo
+*.user
+*.pyc
+
+# Outros arquivos temporários
+*.bak
+*.swp
+
